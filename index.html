@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe Cards App</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <div class="container">
+                    <h1>Recipe Vault</h1>
+                    <button id="new--recipe"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </header>
+            <section class="section-one hidden" id="recipe--form">
+                <div class="container">
+                    <form id="form">
+                        <fieldset>
+                            <label for="recipe--title--input"><h4>Recipe Title</h4></label>
+                            <input required class="form-container-input" type="text" placeholder="Potato Soup" name="title" id="recipe--title--input">
+                            <div class="ingredient-list" id="ingredient--form">
+                                <h4>Ingredient List</h4>
+                                <div id="ingredient--items">
+                                    <div>
+                                        <ul class="labels">
+                                            <li>QTY</li>
+                                            <li>Ingredient Name</li>
+                                        <ul>
+                                    </div>
+                                    <div class="item">  
+                                        <!-- <label>Qty</label> -->
+                                        <input 
+                                            required 
+                                            class="qty" 
+                                            type="text" 
+                                            placeholder="3" 
+                                            id="ingredient--quantity--input"
+                                            pattern="[a-zA-Z0-9]+"
+                                            title="Only use numbers and letters"
+                                            name="ingredient-quantity"
+                                            >
+                                        &nbsp;&nbsp;
+                                        <!-- <label>Name</label> -->
+                                        <input 
+                                            required 
+                                            class="name" 
+                                            type="text" 
+                                            placeholder="Peeled Potatoes" 
+                                            id="ingredient--input"
+                                            name="ingredient-name"
+                                            >
+                                    </div>
+                                </div>
+                                <button 
+                                    id="add--ingredient" 
+                                    class="add--button"
+                                    type="button"
+                                    >Add Ingredient</button>
+                            </div>
+                            <div class="cooking-method--form">
+                                <h4>Cooking Method</h4>
+                                <div id="cooking--steps">
+                                    <div>
+                                        <p class="labels">Steps</p>
+                                    </div> 
+                                    <div class="item"> 
+                                        <!-- <label>Step</label> -->
+                                        <input 
+                                            required 
+                                            class="step" 
+                                            type="text" 
+                                            placeholder="Cook the peeled potatos in a microwave for 5 minutes."
+                                            name="cooking-steps"
+                                            >
+                                    </div>
+                                </div>
+                                <button 
+                                    id="add--step" 
+                                    class="add--button"
+                                    type="button"
+                                    >Add Step</button>
+                            </div>
+                            <div id="recipe--categories" class="custom-select">
+                                <label for="category--options">Select recipe category</label>
+                                <select id="category--options" class="select">
+                                    <option value="breakfast">Breakfast</option>
+                                    <option value="lunch">Lunch</option>
+                                    <option value="dinner">Dinner</option>
+                                    <option value="dessert">Dessert</option>
+                                </select>
+                            </div>
+                                
+                            <div class="button-container">
+                                <button type="submit" class="submit" id="submit--recipe">Save Recipe</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+            <section class="recipe--filters">
+                <div class="container">
+                    <button>my recipes</button>
+                    <button>shared recipes</button>
+                    <button>breakfast</button>
+                    <button>lunch</button>
+                    <button>dinner</button>
+                    <button>dessert</button>
+                </div>
+            </section>
+            <section class="recipe--section">
+                <div class="container" id="recipe-card-container"></div>
+            </section>
+        </main>
+    </body>
+    <script type="module" src="index.js"></script>
+</html>
